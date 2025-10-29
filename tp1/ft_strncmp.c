@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/28 17:56:57 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/10/29 16:40:26 by jtardieu         ###   ########.fr       */
+/*   Created: 2025/10/29 14:11:14 by jtardieu          #+#    #+#             */
+/*   Updated: 2025/10/29 14:31:25 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <stdio.h>
 #include "libft.h"
-int main(int ac ,char **av)
+
+int ft_strncmp( const char * first, const char * second, size_t length )
 {
-	(void)ac;
-	char *a ;
-	a= ft_strnstr(av[1],av[2],(size_t)ft_atoi(av[3]));
-	printf("%s",a);
+	size_t	i;
+
+	i = 0;
+	while ((first[i] || second[i]) && i < length)
+	{
+		if (first[i] != second[i])
+		{
+			return (first[i] - second[i]);
+		}
+		i++;
+	}
+	return (0);
 }
