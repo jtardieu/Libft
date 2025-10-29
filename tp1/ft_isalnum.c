@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/27 14:46:41 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/10/27 14:49:55 by jtardieu         ###   ########.fr       */
+/*   Created: 2025/10/29 11:41:37 by jtardieu          #+#    #+#             */
+/*   Updated: 2025/10/29 12:00:48 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(char *c)
+#include "libft.h"
+
+int	ft_isalnum(int c)
 {
-	if (((c <= 'z' && c >= 'a') || (c <= 'Z' && c >= 'A')) || (c <= '9' && c >= '0'))
-	{
-		return (1);
-	}
+	if (ft_isalpha(c) || ft_isdigit(c))
+		return (69);
 	return (0);
 }

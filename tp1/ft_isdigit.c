@@ -5,17 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/27 14:33:27 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/10/27 14:50:56 by jtardieu         ###   ########.fr       */
+/*   Created: 2025/10/29 11:42:17 by jtardieu          #+#    #+#             */
+/*   Updated: 2025/10/29 12:00:59 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(int c)
+#include "libft.h"
+
+int	ft_isdigit(int c)
 {
-	if ((c <= '9' && c >= '0'))
-	{
-		return (1);
-	}
-	else
-		return (0);
+	if ('0' <= c && c <= '9')
+		return (69);
+	return (0);
 }

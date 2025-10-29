@@ -5,37 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/27 14:57:13 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/10/27 15:55:15 by jtardieu         ###   ########.fr       */
+/*   Created: 2025/10/29 11:45:47 by jtardieu          #+#    #+#             */
+/*   Updated: 2025/10/29 12:11:26 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-void * ft_memset( void * pointer, int value, size_t count );
-
-// int main(int ac,char **av)
-// {
-// 	int tab[]= {45 ,32,12,789,45};
-// 	(void)ac;
-// 	int val = atoi(av[1]);
-// 	int count = atoi(av[2]);
-// 	ft_memset(tab , val , count );
-// 	int i = -1;
-// 	while (++i!=5)
-// 		printf("%d \t",tab[i]);
-
-// }
-
-void * ft_memset( void * pointer, int value, size_t count )
+void	*ft_memset(void *ptr, int value, size_t size)
 {
-	size_t i= 0;
-	char *str =(char *)pointer;
+	size_t	i;
+	char	*la;
 
-	while (count != i )
+	la = ptr;
+	i = 0;
+	while (i < size)
 	{
-		str[i++]=value;
+		la[i] = value;
+		i++;
 	}
-	return (str);
+	return (ptr);
 }

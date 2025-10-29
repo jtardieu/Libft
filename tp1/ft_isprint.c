@@ -5,17 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/27 14:50:35 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/10/27 14:53:15 by jtardieu         ###   ########.fr       */
+/*   Created: 2025/10/29 11:42:45 by jtardieu          #+#    #+#             */
+/*   Updated: 2025/10/29 12:01:03 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int c)
+#include "libft.h"
+
+int	ft_isprint(int c)
 {
-	if (c <= 126 && c >= 32)
-	{
-		return (1);
-	}
-	else
-		return (0);
+	if (32 <= c && c <= 126)
+		return (69);
+	return (0);
 }

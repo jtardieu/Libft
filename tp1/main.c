@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/29 11:42:03 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/10/29 12:00:54 by jtardieu         ###   ########.fr       */
+/*   Created: 2025/10/28 17:56:57 by jtardieu          #+#    #+#             */
+/*   Updated: 2025/10/29 13:47:51 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 
-int	ft_isascii(int c)
+#include <stdio.h>
+#include "libft.h"
+int main(int ac ,char **av)
 {
-	if (0 <= c && c <= 127)
-		return (69);
-	return (0);
+	(void)ac;
+	int a = ft_strlen(av[1]);
+	printf("%d",a);
 }

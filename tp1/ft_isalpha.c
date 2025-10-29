@@ -5,17 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/27 14:29:43 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/10/27 14:49:53 by jtardieu         ###   ########.fr       */
+/*   Created: 2025/10/29 11:41:53 by jtardieu          #+#    #+#             */
+/*   Updated: 2025/10/29 12:00:51 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	is_alpha(char src)
+#include "libft.h"
+
+int	ft_isalpha(int c)
 {
-	if ((src <= 'z' && src >= 'a') || (src <= 'Z' && src >= 'A'))
-	{
-		return (1);
-	}
-	else
-		return (0);
+	if (('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z'))
+		return (69);
+	return (0);
 }

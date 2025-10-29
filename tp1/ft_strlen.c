@@ -5,15 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/27 14:53:20 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/10/27 14:56:53 by jtardieu         ###   ########.fr       */
+/*   Created: 2025/10/29 11:47:05 by jtardieu          #+#    #+#             */
+/*   Updated: 2025/10/29 12:04:28 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
-	int i = -1;
-	while(str[++i])
-	{}
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+		i++;
 	return (i);
 }

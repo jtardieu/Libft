@@ -5,35 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/27 17:36:56 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/10/27 17:58:16 by jtardieu         ###   ########.fr       */
+/*   Created: 2025/10/29 11:46:54 by jtardieu          #+#    #+#             */
+/*   Updated: 2025/10/29 12:02:47 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-char	*ft_strlcpy(char *dest, char *src,size_t destaille);
-
-int	main(int ac , char **av)
-{
-	(void) ac;
-	char *src = av[1];
-	char chien[atoi(av[2])] ;
-	ft_strlcpy(chien , src , atoi(av[2]));
-	printf("%s",chien);
-}
-
-char	*ft_strlcpy(char *dest, char *src,size_t destaille)
+size_t	ft_strlcpy(char	*dest, const char *src, size_t size)
 {
 	size_t	i;
+	char	*src1;
 
-	i = -1;
-	while (src[++i] && i>=destaille)
+	i = 0;
+	src1 = (char *)src;
+	if (!dest && !src)
+		return (dest[i]);
+	while (src1[i])
+		i++;
+	if (size == 0)
+		return (i);
+	i = 0;
+	while (src1[i] && (i < size - 1))
 	{
-		dest[i] = src[i];
-		
+		dest[i] = src1[i];
+		i++;
 	}
-	dest[i] = src[i];
-	return (dest);
+	dest[i] = '\0';
+	while (src1[i])
+		i++;
+	return (i);
 }
