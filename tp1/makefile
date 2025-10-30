@@ -5,6 +5,7 @@ CFLAGS = -Wall -Werror -Wextra
 SOURCE =	ft_strlcat.c \
 			ft_strlcpy.c \
 			ft_strlen.c \
+			ft_strdup.c \
 			ft_isalnum.c \
 			ft_isalpha.c \
 			ft_isascii.c \
@@ -17,12 +18,19 @@ SOURCE =	ft_strlcat.c \
 			ft_memmove.c \
 			ft_memset.c \
 			ft_memchr.c \
+			ft_memcmp.c \
+			ft_calloc.c \
 			ft_strncmp.c \
 			ft_atoi.c \
 			ft_strnstr.c \
 			ft_strchr.c
 
-OBJ = $(SOURCE:.c=.o)
+PART2  =  	ft_substr.c \
+			ft_strtrim.c \
+			ft_strjoin.c \
+			ft_split.c
+
+OBJ = $(SOURCE:.c=.o) $(PART2:.c=.o)
 
 
 all: $(NAME)
