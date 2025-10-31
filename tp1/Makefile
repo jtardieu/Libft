@@ -1,11 +1,12 @@
 NAME = libft.a
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g
 
 SOURCE =	ft_strlcat.c \
 			ft_strlcpy.c \
 			ft_strlen.c \
 			ft_strdup.c \
+			ft_strrchr.c \
 			ft_isalnum.c \
 			ft_isalpha.c \
 			ft_isascii.c \
@@ -28,7 +29,15 @@ SOURCE =	ft_strlcat.c \
 PART2  =  	ft_substr.c \
 			ft_strtrim.c \
 			ft_strjoin.c \
-			ft_split.c
+			ft_split.c \
+			ft_itoa.c \
+			ft_strmapi.c \
+			ft_striteri.c \
+			ft_putchar_fd.c \
+			ft_putstr_fd.c \
+			ft_putendl_fd.c \
+			ft_putnbr_fd.c
+
 
 OBJ = $(SOURCE:.c=.o) $(PART2:.c=.o)
 

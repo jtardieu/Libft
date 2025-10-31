@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/30 10:52:48 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/10/31 16:22:59 by jtardieu         ###   ########.fr       */
+/*   Created: 2025/10/31 16:52:07 by jtardieu          #+#    #+#             */
+/*   Updated: 2025/10/31 16:52:14 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_memcmp( const void * pointer1, const void * pointer2, size_t size )
+char	*ft_strrchr(const char *s, int c)
 {
-	size_t	i;
+	int	i;
 
-	const unsigned char *ptr1;
-	const unsigned char *ptr2;
-
-	ptr1 = pointer1;
-	ptr2 = pointer2;
 	i = 0;
-	while (i < size)
-	{
-		if (ptr1[i] != ptr2[i])
-		{
-			return (ptr1[i] - ptr2[i]);
-		}
+	while (s[i])
 		i++;
+	while (i >= 0)
+	{
+		if (s[i] == (char)c)
+			return ((char *)(s + i));
+		i--;
 	}
-	return (0);
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:53:59 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/10/29 16:06:19 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/10/31 16:17:47 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void    *ft_memchr(const void *memo, int c, size_t size)
 {
-    char    cast_c;
-    char    *cs;
+     unsigned char    cast_c;
+    const unsigned char     *cs;
     size_t    i;
 
-    cast_c = (char)c;
-    cs = (char *)memo;
+    cast_c = (unsigned char)c;
+    cs = (const unsigned char *)memo;
     i = 0;
     while (cs[i] && i < size)
     {
@@ -28,6 +28,6 @@ void    *ft_memchr(const void *memo, int c, size_t size)
         i++;
     }
     if (cs[i] == cast_c && i < size)
-        return ((char *)&cs[i]);
+        return ((void *)&cs[i]);
     return (NULL);
 }

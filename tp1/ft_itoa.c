@@ -1,34 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/30 10:52:48 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/10/31 16:22:59 by jtardieu         ###   ########.fr       */
+/*   Created: 2025/10/31 13:36:47 by jtardieu          #+#    #+#             */
+/*   Updated: 2025/10/31 17:05:19 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_memcmp( const void * pointer1, const void * pointer2, size_t size )
+int exposant(int n);
+
+char *ft_itoa(int n)
 {
-	size_t	i;
+	unsigned long i;
+	int nbchar;
+	char *envoie;
+	int sign;
 
-	const unsigned char *ptr1;
-	const unsigned char *ptr2;
+	nbchar = exposant(n);
+	i=n;
+	sign = 0;
+	if (0>n)
+		sign++;
+	envoie = ft_calloc(nbchar + sign, sizeof(char));
 
-	ptr1 = pointer1;
-	ptr2 = pointer2;
-	i = 0;
-	while (i < size)
+	if (0>n)
+		envoie[0]='-';
+
+	while (n)
 	{
-		if (ptr1[i] != ptr2[i])
-		{
-			return (ptr1[i] - ptr2[i]);
-		}
+		envoie[n--] = i%10;
+		i/=10;
+
+	}
+	return(envoie);
+}
+
+int exposant(int n)
+{
+	unsigned long i;
+
+	i=0;
+	while (n)
+	{
+		n/=10;
 		i++;
 	}
-	return (0);
+	return (i);
 }
