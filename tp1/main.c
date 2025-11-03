@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 17:56:57 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/10/31 15:26:34 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/11/03 17:05:20 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@
 
 int main(int ac ,char **av)
 {
-
 	(void) ac;
-	int a =ft_atoi((av[1]));
-	char *chien = ft_itoa(a);
-	printf("%s\n",chien);
+	// char **chien = ft_split(av[1],av [2][0]);
+	//  int a =ft_atoi((av[1]));
 
+	char *chien = ft_strmapi(av[1],ft);
+
+	printf("chien %s\n",chien);
+	//printf ("chien %s\n",&chien[1]);
 
 		// chien = ft_strtrim(a,b);
 
@@ -30,9 +32,6 @@ int main(int ac ,char **av)
 	// chien = ft_split(a,b);
 
 	// int i =0;
-	// while (chien[i])
-	// {
-	// 	free (chien[i++]);
-	// }
-	 free (chien);
+
+	free (chien);
 }

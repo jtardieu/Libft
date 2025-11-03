@@ -6,28 +6,26 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:53:59 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/10/31 16:17:47 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/11/03 16:24:32 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memchr(const void *memo, int c, size_t size)
+void    *ft_memchr(const void *s, int c, size_t n)
 {
-     unsigned char    cast_c;
-    const unsigned char     *cs;
+    unsigned char    *cs;
+    unsigned char    cc;
     size_t    i;
 
-    cast_c = (unsigned char)c;
-    cs = (const unsigned char *)memo;
+    cs = (unsigned char *)s;
+    cc = (unsigned char)c;
     i = 0;
-    while (cs[i] && i < size)
+    while (i < n)
     {
-        if (cs[i] == cast_c)
-            return ((char *)&cs[i]);
+        if (cs[i] == cc)
+            return ((void *)&cs[i]);
         i++;
     }
-    if (cs[i] == cast_c && i < size)
-        return ((void *)&cs[i]);
     return (NULL);
 }

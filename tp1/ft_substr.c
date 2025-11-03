@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 13:35:43 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/10/30 15:08:52 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/11/03 12:07:20 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,22 @@
 
 char *ft_substr(char const *s, unsigned int start,size_t len)
 {
-	size_t i = 0;
-	char *tab = malloc(sizeof(char)*len);
+	char *tab;
 
-	while (s[start]&& ++i <= len)
-		tab[i-1] = s[start++];
+	if (!s)
+		return (0);
+
+	if (start >= ft_strlen(s))
+		return (ft_strdup(""));
+
+	if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
+
+	tab = malloc(sizeof(char)*len+1);
+
+	if (!tab)
+		return (NULL);
+
+	ft_strlcpy(tab , s+start ,len + 1);
 	return (tab);
 }

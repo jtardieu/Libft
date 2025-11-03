@@ -6,49 +6,48 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 13:36:47 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/10/31 17:05:19 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/11/03 16:32:26 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int exposant(int n);
+static int exposant(int n)
+{
+    int i = 1;
+    while (n / 10 != 0)
+    {
+        n /= 10;
+        i++;
+    }
+    return (i);
+}
 
 char *ft_itoa(int n)
 {
-	unsigned long i;
-	int nbchar;
-	char *envoie;
-	int sign;
+    int nbchar;
+    char *envoie;
+    int sign ;
 
-	nbchar = exposant(n);
-	i=n;
-	sign = 0;
-	if (0>n)
-		sign++;
-	envoie = ft_calloc(nbchar + sign, sizeof(char));
-
-	if (0>n)
-		envoie[0]='-';
-
-	while (n)
-	{
-		envoie[n--] = i%10;
-		i/=10;
-
-	}
-	return(envoie);
-}
-
-int exposant(int n)
-{
-	unsigned long i;
-
-	i=0;
-	while (n)
-	{
-		n/=10;
-		i++;
-	}
-	return (i);
+	sign = 0 ;
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+    if (n < 0)
+    {
+        sign = 1;
+        n = -n;
+    }
+    nbchar = exposant(n) + sign;
+    envoie = ft_calloc(nbchar + 1, sizeof(char));
+    if (!envoie)
+        return (NULL);
+    envoie[nbchar] = '\0';
+    while (nbchar > sign)
+    {
+        envoie[--nbchar] = (n % 10) + '0';
+        n /= 10;
+    }
+    if (sign)
+        envoie[0] = '-';
+    return (envoie);
 }

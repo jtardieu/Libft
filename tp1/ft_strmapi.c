@@ -6,10 +6,21 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 16:40:29 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/10/31 16:41:03 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/11/03 17:02:43 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	int i = 0 ;
+	char *a ;
+
+	a = ft_calloc(ft_strlen(s)+1,sizeof(char));
+	if (!a)
+		return (NULL);
+
+	while (s[i])
+		a[i] = f(i , s[i]);
+}

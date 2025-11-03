@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 17:57:08 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/10/31 12:33:55 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/11/03 16:49:28 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,11 @@ char **ft_split(char const *s, char c)
 	int i = 0;
 	int j = 0;
 	int cmpmot = 0;
-	int nbmot = 0;
 
-	nbmot = nbword(s,c);
-	envoie = malloc(sizeof(char*) * nbmot+1);
+	envoie = ft_calloc(nbword(s,c)+1 ,sizeof(char*));
+
+	while (s[i]==c)
+		i++;
 	while (s[i])
 	{
 		while (s[i]!=c)
@@ -37,16 +38,14 @@ char **ft_split(char const *s, char c)
 			envoie[cmpmot++] = ft_substr(s,i-j,j);
 			j=0;
 		}
-			if (envoie[cmpmot-1]==NULL)
-		{
-			freeall(envoie,nbmot);
-		}
+		if (envoie[cmpmot-1]== 0)
+
+			freeall(envoie,nbword(s,c));
 
 		while (s[i]==c&& s[i])
 			i++;
-
 	}
-	envoie[cmpmot]=NULL;
+	envoie[cmpmot] = 0;
 	return (envoie);
 }
 
@@ -54,16 +53,20 @@ int nbword(char const *str, char c)
 {
 	int i = 0;
 	int j = 0;
+		// while (str[i]!=c && str[i])
+		// 	i++;
 	while (str[i])
 	{
 		while (str[i]==c)
 			i++;
-		if (str[i]!=c)
+
+		if (str[i] && str[i]!=c)
 			j++;
-		while (str[i]!=c&& str[i])
+		while (str[i] && str[i]!=c)
 			i++;
 	}
-	return (++j);
+	printf("%d",j);
+	return (j);
 }
 
 void freeall(char **str,int taille)

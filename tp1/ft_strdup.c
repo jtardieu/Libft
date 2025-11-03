@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 12:18:17 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/10/30 11:24:17 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/11/03 11:51:24 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,19 @@ char	*ft_strdup( const char * source )
 {
 	char	*transfert;
 	size_t	taille;
+	int i ;
 
+	i = 0;
 	taille = ft_strlen(source);
 	transfert = malloc(sizeof(char) * taille + 1 );
 	if (transfert == NULL)
 		return (0);
-	ft_strlcpy(transfert, source, taille);
+	while (source[i])
+	{
+		transfert[i] = source[i];
+		i++;
+	}
+	transfert[i] = '\0';
 	return (transfert);
 }
 
