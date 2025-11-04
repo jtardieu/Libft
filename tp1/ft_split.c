@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jtardieu <jtardieu@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 17:57:08 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/03 16:49:28 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/11/04 22:56:57 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ int nbword(char const *str, char c)
 		while (str[i] && str[i]!=c)
 			i++;
 	}
-	printf("%d",j);
 	return (j);
 }
 
