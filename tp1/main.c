@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 17:56:57 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/04 22:50:31 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/11/06 00:41:33 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,11 @@ int main(int ac ,char **av)
 	while (chien[++i])
 	{
 		printf("%s\n",chien[i]);	
+		
 	}
 
 	while (i--)
-		free (chien[i--]);
+		free (chien[i]);
 		 
 	free (chien);
 }
