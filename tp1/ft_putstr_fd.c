@@ -6,19 +6,19 @@
 /*   By: jtardieu <jtardieu@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 16:44:00 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/04 22:00:45 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/11/06 17:22:29 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-	int i ;
-	
+	int	i;
+
 	i = -1;
-	while(s[++i])
+	while (s[++i])
 	{
-		write(fd,&s[i],1);
+		write(fd, &s[i], 1);
 	}
 }

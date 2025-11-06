@@ -6,15 +6,14 @@
 /*   By: jtardieu <jtardieu@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 16:44:45 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/04 22:01:28 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/11/06 17:21:57 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
-	ft_putstr_fd(s,fd);
-	write(fd,"\n",1);
-	
+	ft_putstr_fd(s, fd);
+	write(fd, "\n", 1);
 }
