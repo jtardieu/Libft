@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42mulhouse.f    +#+  +:+       +#+        */
+/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 17:57:08 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/06 17:18:23 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/11/11 10:11:10 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,31 +19,29 @@ int		newmot(char const *str, char c);
 char	**ft_split(char const *s, char c)
 {
 	char	**envoie;
-	int		i;
-	int		cmpmot;
-	int		mot;
+	int		icmpmotmot[3];
 
-	cmpmot = 0;
-	i = 0;
+	icmpmotmot[1] = 0;
+	icmpmotmot[0] = 0;
 	if (!s)
 		return (0);
 	envoie = ft_calloc(nbword(s, c) + 1, sizeof(char *));
 	if (!envoie)
 		return (NULL);
-	while (s[i])
+	while (s[icmpmotmot[0]])
 	{
-		while (s[i] && s[i] == c)
-			i++;
-		if (!s[i])
+		while (s[icmpmotmot[0]] && s[icmpmotmot[0]] == c)
+			icmpmotmot[0]++;
+		if (!s[icmpmotmot[0]])
 			break ;
-		mot = newmot(&s[i], c);
-		envoie[cmpmot] = ft_substr(s, i, mot);
-		if (!envoie[cmpmot])
-			return (freeall(envoie, cmpmot), NULL);
-		i += mot;
-		cmpmot++;
+		icmpmotmot[2] = newmot(&s[icmpmotmot[0]], c);
+		envoie[icmpmotmot[1]] = ft_substr(s, icmpmotmot[0], icmpmotmot[2]);
+		if (!envoie[icmpmotmot[1]])
+			return (freeall(envoie, icmpmotmot[1]), NULL);
+		icmpmotmot[0] += icmpmotmot[2];
+		icmpmotmot[1]++;
 	}
-	envoie[cmpmot] = NULL;
+	envoie[icmpmotmot[1]] = NULL;
 	return (envoie);
 }
 
