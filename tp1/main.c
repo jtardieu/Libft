@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42mulhouse.f    +#+  +:+       +#+        */
+/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 17:56:57 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/06 17:39:27 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/11/11 14:29:55 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,13 @@
 #include "libft.h"
 #include <fcntl.h>
 
-void chat(unsigned int i , char* miou); 
+void chat(unsigned int i , char* miou);
 
 int main(int ac ,char **av)
 {
 	(void) ac;
 	// char **chien = ft_split(av[1],av [2][0]);
 	//  int a =ft_atoi((av[1]));
-	
 
 	//printf("chien %s\n",chien);
 	//printf ("chien %s\n",&chien[1]);
@@ -46,26 +45,9 @@ int main(int ac ,char **av)
 //	Ferme le fichier
 	close(fd);
 
-
-
-
-
-
-
-
-	
-	// printf("   _-%c-_  \n",av[2][0]);
-
-	// chien = ft_split(a,b);
-
-	
-		//printf("%s\n",chien);	
-		
-	
-
 //	while (i--)
 //		free (chien[i]);
-		 
+
 //free (chien);
 }
 

@@ -1,1 +1,19 @@
-0
+	void	*content;
+	t_list	*tampon;
+	t_list	*begin_list;
+
+	if (!lst || !f || !del)
+		return (NULL);
+	begin_list = NULL;
+	while (lst)
+	{
+		content = f(lst->content);
+		if (!content)
+			return (ft_lstclear(&begin_list, del), NULL);
+		tampon = ft_lstnew(content);
+		if (!tampon)
+			return (del(content), ft_lstclear(&begin_list, del), NULL);
+		ft_lstadd_back(&begin_list, tampon);
+		lst = lst->next;
+	}
+	return (begin_list);
