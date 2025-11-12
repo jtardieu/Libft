@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42mulhouse.f    +#+  +:+       +#+        */
+/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 11:41:10 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/06 16:30:36 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/11/12 12:03:53 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *ptr, size_t count)
+void	ft_bzero(void *s, size_t n)
 {
-	ft_memset(ptr, '\0', count);
+	ft_memset(s, '\0', n);
 }

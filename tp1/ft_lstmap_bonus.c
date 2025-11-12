@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 15:24:50 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/11 17:41:45 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/11/12 13:24:04 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			return (ft_lstclear(&startlst, del), NULL);
 		tampon = ft_lstnew(content);
 		if (!tampon)
+		{
+			del(content);
 			return (ft_lstclear(&startlst, del), NULL);
+		}
 		ft_lstadd_back (&startlst, tampon);
 		lst = lst->next;
 	}

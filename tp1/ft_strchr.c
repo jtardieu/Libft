@@ -3,29 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42mulhouse.f    +#+  +:+       +#+        */
+/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 11:46:29 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/06 16:36:56 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/11/12 13:18:21 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int findc)
+char	*ft_strchr(const char *s, int c)
 {
 	char	cast_c;
 	int		i;
 
-	cast_c = (char)findc;
+	cast_c = (char)c;
 	i = 0;
-	while (str[i])
+	while (s[i])
 	{
-		if (str[i] == cast_c)
-			return ((char *)&str[i]);
+		if (s[i] == cast_c)
+			return ((char *)&s[i]);
 		i++;
 	}
-	if (str[i] == cast_c)
-		return ((char *)&str[i]);
+	if (s[i] == cast_c)
+		return ((char *)&s[i]);
 	return (0);
 }
