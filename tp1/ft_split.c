@@ -6,15 +6,15 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 17:57:08 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/11 10:11:10 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/11/12 17:45:26 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		nbword(char const *str, char c);
-void	freeall(char **str, int taille);
-int		newmot(char const *str, char c);
+static int	nbword(char const *str, char c);
+static void	freeall(char **str, int taille);
+static int	newmot(char const *str, char c);
 
 char	**ft_split(char const *s, char c)
 {
@@ -45,7 +45,7 @@ char	**ft_split(char const *s, char c)
 	return (envoie);
 }
 
-int	nbword(char const *str, char c)
+static int	nbword(char const *str, char c)
 {
 	int	i;
 	int	j;
@@ -66,7 +66,7 @@ int	nbword(char const *str, char c)
 	return (j);
 }
 
-void	freeall(char **str, int taille)
+static void	freeall(char **str, int taille)
 {
 	int	i;
 
@@ -79,7 +79,7 @@ void	freeall(char **str, int taille)
 	free(str);
 }
 
-int	newmot(char const *str, char c)
+static int	newmot(char const *str, char c)
 {
 	int	i;
 
