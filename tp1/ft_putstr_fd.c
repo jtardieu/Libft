@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 16:44:00 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/12 11:50:04 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/11/14 15:55:46 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s)
 		return ;
-	write(fd, &s[i], ft_strlen(s);
+	write(fd, s, ft_strlen(s));
 }
